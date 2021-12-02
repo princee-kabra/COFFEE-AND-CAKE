@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coffee and Cake</title>
+	<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+	*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+body{
+	font-size: 22px;
+	overflow-x: hidden;
+	font-family: 'Mochiy Pop P One', sans-serif;
+}
+header{
+	background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('../public/images/back.jpg');
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size:1550px 1000px; 
+}
+.clearfix:after{
+	content: ".";
+	visibility: hidden;
+	display: block;
+	height: 0px;
+	clear: both;
+}
+.row{
+	max-width: 1180px;
+	margin:0 auto;
+}
+.logo{
+	height:120 px;
+	width:auto;
+	float:left;
+	margin-top: 20px;
+}
+.main-nav {
+	float: right;
+	margin-top: 60px;
+}
+.main-nav li{
+	display: inline-block;
+	list-style: none;
+	margin-left: 40px;
+}
+.main-nav li a{
+	color: #fff;
+	text-decoration:none;
+	text-transform: uppercase;
+	font-size: 90%;
+	font-weight: 100;
+}
+.main-nav li a:hover{
+	border-bottom: 2px solid #bf55ec;
+}
+.main-content-header{
+	width:1180px;
+	position: absolute;
+	top:30%;
+	left:50%;
+	transform:translate(-50%,50%); 
+}
+h1{
+	color:#fff;
+	font-size: 200%;
+   word-spacing: 5px;
+   letter-spacing: 3px;
+   margin-bottom: 20px;
+   text-transform: uppercase;
+   font-weight: lighter;
+}
+
+.btn{
+	display: inline-block;
+	padding: 10px 40px;
+	font-weight: lighter;
+	text-decoration:none;
+	text-transform: uppercase;
+	border-radius: 200px;
+	transition:background-color 0.2s,border 0.2s,color 0.2;
+}
+
+.btn-full{
+	background-color: transparent;
+	color: #bf55ec;
+	margin-right: 15px;
+	border:1px solid #bf55ec; 
+}
+.btn-full:hover{
+	background-color: #fff; 
+}
+.colorchange{
+	animation:colorchangecoffeeandcake 1s infinite;
+}
+@keyframes colorchangecoffeeandcake{
+	0%{color:cyan;}
+	25%{color: white;}
+	50%{color: orange;}
+	100%{color: green;}
+}
+.mobile-icon{
+	display: none;
+}
+
+@media only screen and (max-width: 1180px)
+{
+	.main-content-header{
+		width:100%;
+		padding:0 2%;
+	}
+
+}
+
+/*@media only screen and (max-width: 998px)
+{ h1{
+	font-size: 200%;
+}
+
+}*/
+@media only screen and (max-width: 1010px)
+{ h1{
+	font-size: 180%;
+}
+.main-nav{display:none;}
+.mobile-icon{
+	display: inline-block;
+	color:#fff;
+	margin-top: 30px;
+	float: right;
+	margin-right: 20px;
+
+}
+.main-nav{
+	float: left;
+}
+.main-nav li{
+	display: block;
+	margin-top: 10px;
+	font-size:50%;
+}
+
+}
+
+@media only screen and (max-width: 630px)
+{ header{ 
+background-size: cover;
+   background-repeat: no-repeat;
+   	background-position: center;
+
+}
+h1{
+	font-size: 100%;
+}
+.btn{
+	padding: 10px 40px;
+	border-radius: 50px;
+}
+.logo{
+	height: 100px;
+	padding-left: 10px;
+}
+.main-content-header{
+	top:20%;
+}
+.btn-full{
+	border:.5px solid #bf55ec; 
+}
+}
+
+
+</style>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header>
+	<nav>
+		<div class="row clearfix">
+			<img src="../public/images/logo.jpg" class="logo">
+			<ul class="main-nav animated slideInDown" id="check-class">
+			<!--	<li><a href="#">CAKE DELIVERY</a></li> -->
+				<li><a href="must">MUST TRY</a></li>
+				<li><a href="aboutus">ABOUT US</a></li>
+				<li><a href="login">SIGN UP</a></li>
+                <% if(k==0) { %>
+				<li><a href="log">LOGIN</a></li>
+<%} else{%>  
+				<li><a href="logout">LOGOUT</a></li>
+<% } %>              
+
+			</ul>
+			<a href="#" class="mobile-icon"  onclick="slideshow()" ><i class="fas fa-bars"></i>
+
+</a>
+		</div>
+</nav>
+<div class="main-content-header">
+<h1>WELCOME TO <span class="colorchange">COFFEE AND CAKE CAFE</span> <br><br></h1>
+<a href="reserve" class="btn btn-full">Reserve Your Seat </a>
+<!--<a href="#" class="btn btn-full">the must try</a>-->
+</div>
+</header>
+<script type="text/javascript">
+	function slideshow(){
+         var x=document.getElementById('check-class');
+         if(x.style.display === "none"){
+         	x.style.display="block";
+         }
+         else{
+         	x.style.display="none";
+         }
+	}
+	</script>
+</body>
+</html>
+
+
+
+</html>
